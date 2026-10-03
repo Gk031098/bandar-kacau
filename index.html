@@ -1295,7 +1295,7 @@ if(!init3D()){document.getElementById('err').hidden=false;document.getElementByI
 resize();
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{if(!G)return;for(const k in G.signCache){const s=G.signCache[k],n=signTex(s.word,s.col);s.t.image=n.c;s.t.needsUpdate=true;n.t.dispose();}});
 /* ---------- online: Supabase sign-in, cloud save, leaderboard, live players ---------- */
-const NET={sb:null,uid:null,name:'',chan:null,ok:false,peers:new Map(),sendT:0,saveT:6,lastSig:'',bestJump:store.get('bk_jump',0),count:0,boardT:0};
+const NET={sb:null,uid:null,name:'',chan:null,ok:false,peers:new Map(),sendT:0,saveT:6,lastSig:'',bestJump:store.get('bk_jump',0),count:0,boardT:-1e9};
 const cfg=window.BANDAR_CONFIG||{};
 const netEl=document.getElementById('netStatus'),nameEl=document.getElementById('pname');
 const EMOTES=['Honk honk!','GG','Race me!','Follow me'];
