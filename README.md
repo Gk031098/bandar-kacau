@@ -28,6 +28,8 @@ Without Supabase keys the game still works, in offline mode.
 | P | Pause and see the leaderboard |
 | G | Switch graphics quality (High has bloom and soft shadows) |
 
+Pick your character (Vanguard, Michelle or X Bot) on the title screen.
+
 On phones, the game shows an on-screen stick and buttons, and starts on Low graphics for speed.
 
 Tip: add `#night` or `#rain` to the end of the link to start at night or in the rain.
@@ -51,9 +53,16 @@ Tip: add `#night` or `#rain` to the end of the link to start at night or in the 
 
 ## Files
 
-- `index.html`: the whole game. It uses Three.js (r128) for the 3D graphics and supabase-js for the online features, both loaded from public CDNs. The characters, cars and buildings are all built in code, with no model files. The people are skinned meshes with a 13-bone skeleton. The cars are extruded from side profiles. The lighting uses ACES tone mapping, environment reflections and bloom.
+- `index.html`: the whole game. It uses Three.js (r128) for the 3D graphics and supabase-js for the online features. Both are loaded from public CDNs, and the real 3D models stream in from the three.js model library when the game starts. If the models can't load, the game falls back to built-in models.
 - `config.js`: your Supabase project URL and public key.
 - `supabase/schema.sql`: sets up the database table and its security rules.
+
+## Credits
+
+- **Characters:** Vanguard, Michelle and X Bot are from [Mixamo](https://www.mixamo.com) (Adobe), loaded from the [three.js model library](https://github.com/mrdoob/three.js/tree/dev/examples/models/gltf). Michelle borrows X Bot's walk, run and idle animations through world-space retargeting.
+- **Car:** Ferrari 458 Italia by [vicent091036](https://sketchfab.com/models/57bf6cc56931426e87494f554df1dab6), loaded from the three.js model library and repainted for each car.
+- **Lighting:** the *Potsdamer Platz* HDRI from [Poly Haven](https://polyhaven.com/a/potsdamer_platz) (CC0).
+- **Libraries:** [three.js](https://threejs.org) (MIT) and [supabase-js](https://github.com/supabase/supabase-js) (MIT).
 
 ## Good to know
 
