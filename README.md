@@ -26,8 +26,11 @@ Without Supabase keys the game still works, in offline mode.
 | Q | Switch fists and pistol |
 | 1-4 | Send a quick message to other players |
 | P | Pause and see the leaderboard |
+| G | Switch graphics quality (High has bloom and soft shadows) |
 
-On phones, the game shows an on-screen stick and buttons.
+On phones, the game shows an on-screen stick and buttons, and starts on Low graphics for speed.
+
+Tip: add `#night` or `#rain` to the end of the link to start at night or in the rain.
 
 ## Set up Supabase (about 5 minutes)
 
@@ -48,7 +51,7 @@ On phones, the game shows an on-screen stick and buttons.
 
 ## Files
 
-- `index.html`: the whole game. It uses Three.js for the 3D graphics and supabase-js for the online features, both loaded from public CDNs.
+- `index.html`: the whole game. It uses Three.js (r128) for the 3D graphics and supabase-js for the online features, both loaded from public CDNs. The characters, cars and buildings are all built in code, with no model files. The people are skinned meshes with a 13-bone skeleton. The cars are extruded from side profiles. The lighting uses ACES tone mapping, environment reflections and bloom.
 - `config.js`: your Supabase project URL and public key.
 - `supabase/schema.sql`: sets up the database table and its security rules.
 
