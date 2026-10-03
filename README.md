@@ -27,8 +27,24 @@ Without Supabase keys the game still works, in offline mode.
 | 1-4 | Send a quick message to other players |
 | P | Pause and see the leaderboard |
 | G | Switch graphics quality (High has bloom and soft shadows) |
+| C | Call your own car |
 
-Pick your character (Vanguard, Michelle or X Bot) on the title screen.
+## Wardrobe & Garage
+
+Open **Wardrobe & Garage** from the title screen or the pause menu. You can build your look on a 3D turntable:
+
+- **Character:** pick a body (Vanguard, Michelle or X Bot), outfit and accent colours, height and build.
+- **Accessories:**
+  - Hats: cap, beanie, songkok, cowboy hat, helmet, crown or halo.
+  - Shades or round glasses, headphones, and a gold chain.
+  - On your back: a backpack, a jetpack or wings.
+  - Accessories are pinned to the skeleton, so they move with the animations.
+- **Car:**
+  - Pick your own car: Cheetah GT (fastest), Saloon (balanced), Pelanduk (nimble) or Roti Van (toughest). Each one handles differently.
+  - Paint it any colour, with a gloss, metallic, matte, chrome or pearl finish.
+  - Add rim colour, window tint, neon underglow, a spoiler, a roof rack, roof box or surfboard, and your own number plate.
+
+Your car waits next to you when you start. Press **C** (or **MY CAR** on phones) to call it to you. Other players online see your character, accessories and car.
 
 On phones, the game shows an on-screen stick and buttons, and starts on Low graphics for speed.
 
@@ -43,6 +59,8 @@ Tip: add `#night` or `#rain` to the end of the link to start at night or in the 
    - Only use the public anon/publishable key.
    - Never use the `service_role` or secret key.
 5. Commit and push. GitHub Pages updates within a minute or two.
+
+**Already set up before the Wardrobe & Garage update?** Run [`supabase/schema.sql`](supabase/schema.sql) again in the SQL Editor. It's safe to re-run, and it adds the `look` column that saves each player's outfit and car online. Until then, looks are saved on each device only.
 
 ## Put it online with GitHub Pages
 

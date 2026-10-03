@@ -11,6 +11,10 @@ create table if not exists public.players (
   updated_at  timestamptz not null default now()
 );
 
+-- Added for the Wardrobe & Garage: each player's character, accessories and car.
+alter table public.players
+  add column if not exists look jsonb check (look is null or pg_column_size(look) < 4096);
+
 create index if not exists players_cash_idx on public.players (cash desc);
 create index if not exists players_jump_idx on public.players (best_jump desc);
 
